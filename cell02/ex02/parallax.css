@@ -1,0 +1,47 @@
+/* ล้าง margin/padding */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* ข้อความในภาพ */
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2em;
+    text-align: center;
+}
+
+/* ภาพ parallax */
+.parallax {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+/* รูปแรก */
+.parallax1 {
+    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
+}
+
+/* รูปที่สอง */
+.parallax2 {
+    background-image: url('https://images.unsplash.com/photo-1493244040629-496f6d136cc3');
+}
+
+/* กล่องตรงกลาง */
+.content {
+    background-color: black;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    font-size: 1.5em;
+}
