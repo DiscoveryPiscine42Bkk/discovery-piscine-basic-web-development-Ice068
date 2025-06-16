@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #f8f8f8;
+    }
+
+    .calc-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 300px;
+      margin: auto;
+    }
+
+    input[type="text"], select {
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<div class="calc-container">
+  <input type="text" id="left" placeholder="Left value">
+  
+  <select id="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+    <option value="%">%</option>
+  </select>
+  
+  <input type="text" id="right" placeholder="Right value">
+  <input type="submit" value="Try me!" onclick="calculate()">
+</div>
+
+<script>
+  function calculate() {
+    const left = document.getElementById('left').value.trim();
+    const right = document.getElementById('right').value.trim();
+    const operator = document.getElementById('operator').value;
+
+    // ตรวจสอบว่าค่าที่กรอกเป็นจำนวนเต็มบวกหรือไม่
+    if (!/^\d+$/.test(left) || !/^\d+$/.test(right)) {
+      alert("Error :(");
+      return;
+    }
+
+    const a = parseInt(left);
+    const b = parseInt(right);
+
+    if ((operator === "/" || operator === "%") && b === 0) {
+      alert("It's over 9000!");
+      console.log("It's over 9000!");
+      return;
+    }
+
+    let result;
+
+    switch (operator) {
+      case '+':
+        result = a + b;
+        break;
+      case '-':
+        result = a - b;
+        break;
+      case '*':
+        result = a * b;
+        break;
+      case '/':
+        result = a / b;
+        break;
+      case '%':
+        result = a % b;
+        break;
+    }
+
+    alert("Result: " + result);
+    console.log("Result:", result);
+  }
+</script>
+
+</body>
+</html>
