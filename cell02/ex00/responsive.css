@@ -1,0 +1,32 @@
+/* ทำให้ตารางครอบคลุมเต็มหน้า */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* ตารางเต็มหน้าจอ และปรับขนาดได้ */
+table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+/* เซลล์ภายในตาราง */
+td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 2vw; /* ปรับขนาดข้อความตามขนาดหน้าจอ */
+    color: white;
+    word-wrap: break-word;
+}
+
+/* กล่อง 1 และ 2 พร้อมพื้นหลัง */
+.box1 {
+    background-color: #3498db;
+}
+
+.box2 {
+    background-color: #e74c3c;
+}
