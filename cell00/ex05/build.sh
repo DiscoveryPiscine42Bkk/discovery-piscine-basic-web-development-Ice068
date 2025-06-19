@@ -2,5 +2,6 @@
 
 for arg in "$@"
 do
-    mkdir "ex$arg"
+    folder="ex$arg"
+    mkdir -p "$folder"
 done
